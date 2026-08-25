@@ -1,0 +1,11 @@
+# 排除文件
+
+# 本仓库只保留 Skill 源码与文档
+# 解压安装后如需重新打包/编辑，可参考 README 的「迭代与自定义」
+
+*.zip
+*.tmp
+.DS_Store
+Thumbs.db
+node_modules/
+dist/
