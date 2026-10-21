@@ -1,4 +1,68 @@
-# AI 内容创作专家团 · WorkBuddy Skill
+# AI 内容创作专家团
+
+把策划、文案、图片、视频、后期与内容适配组织为一套创作流程。六个角色是职责分工，不代表安装后自动获得六个独立账号或生成模型。
+
+> Skill 是给 AI 助手使用的工作方法和参考资料；实际执行能力取决于宿主工具、权限和环境。中文名称用于说明展示，英文仓库地址保留以方便安装与更新。
+
+## 新手从这里开始
+
+### 1. 准备什么
+
+准备主题、受众、发布平台、交付数量、尺寸、时长和已有素材。文字策划可先体验；图片、视频、转录、翻译需要宿主实际提供对应工具，可能受额度与费用限制。
+
+### 2. 下载并加载技能
+
+1. 在本页面点击绿色 **Code → Download ZIP**，解压到你能找到的位置。
+2. 本项目入口是 [ai-content-creator-team/SKILL.md](ai-content-creator-team/SKILL.md)。保留整个技能文件夹，不能只复制 README 或单个 SKILL.md；入口引用的相对路径文件也需要一起保留。
+3. 在支持本地文件的 AI 助手中打开解压目录，明确要求“读取 `ai-content-creator-team/SKILL.md` 并按该技能处理接下来的任务”。如果助手无法读取电脑文件，使用该产品支持的文件导入方式；只粘贴 README 不等于加载完整技能。
+4. 想要长期自动调用时，按下方安装章节放入宿主的技能目录，然后重新打开会话；不同产品的目录和工具权限可能不同。
+5. 先询问：“请说明刚加载的技能名称、能做什么、当前缺少哪些工具。”确认识别正确后再执行任务。
+
+命令行下载（可选，需要已安装 Git；在你存放项目的目录执行）：
+
+```bash
+git clone https://github.com/fantasyo123/ai-content-creator-team.git
+```
+
+### 3. 复制这段话开始第一次使用
+
+```text
+请读取 ai-content-creator-team/SKILL.md，使用内容创作专家团，为一家社区咖啡店策划 3 篇小红书图文。受众是附近上班族，风格自然温暖。先交付每篇标题、正文和配图提示词；检查当前图片工具是否可用，有工具时再生成配图，没有时明确说明。
+```
+
+### 4. 你应该得到什么
+
+3 套标题与正文、各自的配图方案，以及工具可用时生成的图片文件。检查三篇风格是否一致、价格和卖点是否来自你提供的信息。
+
+### 特别注意：仓库里多嵌套了一层
+
+下载解压后，请复制里面的 `ai-content-creator-team/` 文件夹，而不是最外层 `ai-content-creator-team-main/`。安装后的结构应为 `skills/ai-content-creator-team/SKILL.md`，旁边是 `references/`，不能再多出一层同名目录。
+
+### 如何从文稿升级为成片
+
+1. 先用文字任务确认技能加载成功。
+2. 要图片时提供张数、尺寸、视觉参考；要视频时再补画幅、时长、配音和字幕要求。
+3. 请助手列出当前实际可调用的工具，不能只根据文档里的模型名称推断可用。
+4. 先确认一张图或一段短片的效果，再做批量版本。
+5. 要求交付真实文件与失败项，不能把提示词或分镜当成已生成的视频。
+
+### 常见问题
+
+| 现象 | 处理方法 |
+|---|---|
+| 装好后找不到技能 | 检查是否复制了内层文件夹，以及 SKILL.md 是否直接位于技能目录内 |
+| 模型名称不可用 | 文档中的模型是原平台配置，按当前宿主的可用工具调整 |
+| 没有子代理 | 使用单个助手按角色顺序执行，仍可做策划和文案 |
+| 没有视频工具 | 先交付脚本、分镜、素材清单与生成提示词，不能宣称已生成成片 |
+
+
+### 更新与反馈
+
+ZIP 安装用户先备份自己的修改和产出，再下载新版本替换技能文件。Git 安装用户在没有本地修改时可在仓库目录执行 `git pull --ff-only`；有修改时先保存，避免覆盖。更新后重新打开会话。遇到问题请在 [Issues](https://github.com/fantasyo123/ai-content-creator-team/issues) 提供宿主名称、操作步骤、预期结果和脱敏后的错误信息。
+
+---
+
+## 详细能力与原有参考
 
 > 把「AI 内容创作专家团」的完整方法论打包成可随身携带的 WorkBuddy Skill。
 > 无论新开多少会话，加载本 Skill 即可调用完整的 6 角色多模态创作流水线。
@@ -19,13 +83,13 @@
 
 ```bash
 # 1. 下载本仓库 zip 或 clone
-git clone https://github.com/<your-username>/ai-content-creator-team.git
+git clone https://github.com/fantasyo123/ai-content-creator-team.git
 
 # 2. 解压后放到你的用户 Skill 目录（Windows）：
 #    %USERPROFILE%\.workbuddy\skills\ai-content-creator-team\
 ```
 
-方式二：**手动复制目录**到 `~/.workbuddy/skills/`（macOS/Linux）或 `%USERPROFILE%\.workbuddy\skills\`（Windows）
+方式二：**手动复制仓库内层 `ai-content-creator-team/` 目录**到 `~/.workbuddy/skills/`（macOS/Linux）或 `%USERPROFILE%\.workbuddy\skills\`（Windows）
 
 ---
 
@@ -47,7 +111,7 @@ Skill 会自动路由到对应角色与工作流，执行完成后把图片 / �
 
 ---
 
-## 🗂️ 目录结构
+## 🗂️ 内层技能目录结构
 
 ```
 ai-content-creator-team/
@@ -104,9 +168,9 @@ ai-content-creator-team/
 
 ## 🛠️ 迭代与自定义
 
-- 调整模型：编辑 `references/model-selection.md`
-- 调整角色职责：编辑 `references/team-members.md`
-- 新增工作流：在 `references/workflows.md` 按现有格式追加
+- 调整模型：编辑 `ai-content-creator-team/references/model-selection.md`
+- 调整角色职责：编辑 `ai-content-creator-team/references/team-members.md`
+- 新增工作流：在 `ai-content-creator-team/references/workflows.md` 按现有格式追加
 - 重打 zip：`python <skill-creator>/scripts/package_skill.py ./ai-content-creator-team ./dist`
 
 ---
